@@ -1,0 +1,11 @@
+.header {
+    background: aqua;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.caution {
+    color: crimson;
+}
