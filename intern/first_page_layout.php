@@ -26,5 +26,8 @@
         </table>
         <input type="submit" value="送信する" style="margin-top: 10px" class="button">
     </form>
+    <form method="post" action="make_new_delivery.php">
+        <input type="submit" value="新しく配送先を追加する">
+    </form>
 </body>
 </html>
