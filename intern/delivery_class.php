@@ -26,10 +26,39 @@ class DeliveryLocation
         $this->information = $information;
     }
 
-    public function print() {
-        $delivery = "<td>$this->office_name</td><td>$this->zip_code</td><td>$this->office_address</td><td>$this->kana_office_name</td>";
-        print <<< BOX
+    public static function print() {
+        try {
+            $db = new PDO('mysql:host=localhost; dbname=intern; charset=utf8', 'root', '');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $db->query('select zip_code, office_name, office_address from deliveries');
+            while ($row = $stmt->fetch()) {
+                $delivery = "<td>$row[office_name]</td><td>$row[zip_code]</td><td>$row[office_address]</td>";
+                print <<< BOX
 <tr><td><input type="checkbox" name="delivery[]" value="$delivery" class="button">$delivery</td></tr>
 BOX;
+            }
+        } catch (PDOException $e) {
+            print "処理は失敗しました。:" . $e->getMessage();
+            print "<br>";
+        }
+    }
+
+    public static function print_back() {
+        print <<< BACK
+<form method="form" action="$_SERVER[HTTP_REFERER]">
+    <input type="submit" value="前のページへ戻る" style="margin-top: 10px" class="button">
+</form>
+BACK;
+    }
+
+    public static function print_back_list() {
+        print <<< LIST
+<form method="form" action="first_page.php">
+    <input type="submit" value="一覧ページへ戻る" style="margin-top: 10px" class="button">
+</form>
+LIST;
+
+
     }
 }

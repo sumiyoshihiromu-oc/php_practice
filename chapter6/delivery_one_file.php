@@ -37,8 +37,6 @@ BOX;
 
 if ($_SERVER['REQUEST_METHOD']  == 'POST') {
 
-//    var_dump($deliveries);
-
     if (isset($_POST["delivery"])) {
         $deliveries = $_POST["delivery"];
         print "<b>配送先</b>";

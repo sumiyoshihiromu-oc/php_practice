@@ -12,22 +12,16 @@
     <form method="post" action="result_page.php">
 
         <table border="1" style="border-collapse: collapse">
-            <tr class="header"><th></th><th>名前</th><th>郵便番号</th><th>住所</th><th>名前（カナ）</th></tr>
-            <?php
-            $i = 0;
-            foreach ($array as $value) {
-                if ($i > 19) {
-                    break;
-                }
-                $value->print();
-                $i++;
-            }
+            <tr class="header"><th></th><th>配送先名</th><th>郵便番号</th><th>住所</th></tr>
+            <?=
+            DeliveryLocation::print();
             ?>
         </table>
         <input type="submit" value="送信する" style="margin-top: 10px" class="button">
     </form>
+    <br>
     <form method="post" action="make_new_delivery.php">
-        <input type="submit" value="新しく配送先を追加する">
+        <input type="submit" value="新しく配送先を追加する" class="button">
     </form>
 </body>
 </html>
