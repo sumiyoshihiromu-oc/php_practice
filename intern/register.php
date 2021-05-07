@@ -12,7 +12,7 @@ try {
     print "登録しました。";
     DeliveryLocation::print_back_list();
 } catch (PDOException $e) {
-//保存できなかった場合、不遇愛の内容と、ファイル名と行数を表示します。
+//保存できなかった場合、不具合の内容と、ファイル名と行数を表示します。
     print "エラーメッセージ:" . $e->getMessage();
     print "<br>";
     print "エラーが発生したファイル：" . $e->getFile();
