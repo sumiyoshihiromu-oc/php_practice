@@ -1,11 +1,14 @@
+/* headerクラスのついたhtmlタグの背景色を水色にします */
 .header {
     background: aqua;
 }
 
+/* カーソルをbuttonクラスのついたhtmlタグの上に移動させると手のポインターに変更します */
 .button:hover {
     cursor: pointer;
 }
 
+/* cautionクラスのついたhtmlタグの色を赤色に変えます */
 .caution {
     color: crimson;
 }

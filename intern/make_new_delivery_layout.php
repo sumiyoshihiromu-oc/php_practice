@@ -8,6 +8,7 @@
 
 <body>
     <b style="font-size: 30px">新規登録</b>
+<!--入力された値をcheck_delivery.phpに渡します。-->
     <form method="post" action="check_delivery.php">
         配送先名：　<input type="text" name="name">
         <br>

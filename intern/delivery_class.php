@@ -1,31 +1,7 @@
 <?php
 class DeliveryLocation
 {
-    public $zip_code;
-    public $prefectures;
-    public $kana_prefectures;
-    public $municipality;
-    public $kana_municipality;
-    public $town_area;
-    public $office_name;
-    public $kana_office_name;
-    public $office_address;
-    public $information;
-
-    public function __construct($zip_code, $prefectures, $kana_prefectures, $municipality, $kana_municipality, $town_area, $office_name,
-                                $kana_office_name, $office_address, $information) {
-        $this->zip_code = $zip_code;
-        $this->prefectures = $prefectures;
-        $this->kana_prefectures = $kana_prefectures;
-        $this->municipality = $municipality;
-        $this->kana_municipality = $kana_municipality;
-        $this->town_area = $town_area;
-        $this->office_name = $office_name;
-        $this->kana_office_name = $kana_office_name;
-        $this->office_address = $office_address;
-        $this->information = $information;
-    }
-
+//first_page.phpでデータベースに登録されている配送先の一覧を表示させるメソッドです。
     public static function print() {
         try {
             $db = new PDO('mysql:host=localhost; dbname=intern; charset=utf8', 'root', '');
@@ -39,11 +15,16 @@ class DeliveryLocation
 BOX;
             }
         } catch (PDOException $e) {
-            print "処理は失敗しました。:" . $e->getMessage();
+            print "エラーメッセージ:" . $e->getMessage();
             print "<br>";
+            print "エラーが発生したファイル：" . $e->getFile();
+            print "<br>";
+            print "エラーが発生した行：" . $e->getLine();
+
         }
     }
 
+//前のページへ戻るボタンを出力するメソッドです。
     public static function print_back() {
         print <<< BACK
 <form method="form" action="$_SERVER[HTTP_REFERER]">
@@ -52,6 +33,7 @@ BOX;
 BACK;
     }
 
+//配送先一覧を表示しているページ（first_page.php）へ遷移させるボタンを出力するメソッドです。
     public static function print_back_list() {
         print <<< LIST
 <form method="form" action="first_page.php">

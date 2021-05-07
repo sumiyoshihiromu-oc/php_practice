@@ -11,6 +11,7 @@
     <b style="font-size: 30px">配送先</b>
     <table border="1" style="border-collapse: collapse">
         <tr class="header"><th>配送先名</th><th>郵便番号</th><th>住所</th></tr>
+<!--チェックされた配送先を一行ずつ出力します。-->
         <?php
         foreach ($deliveries as $delivery) {
             print "<tr>$delivery</tr>";
