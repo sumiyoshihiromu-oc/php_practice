@@ -10,12 +10,12 @@ if ($_SERVER['REQUEST_METHOD']  == 'POST') {
     $_SESSION["ie"] = $_POST["ie"];
     $_SESSION["jirou"] = $_POST["jirou"];
     print "確認<br>";
-    print "醤油ラーメン：" . $_POST["soy_sauce"]. "　食<br>";
-    print "塩ラーメン　：" . $_POST["salt"]. "　食<br>";
-    print "豚骨ラーメン：" . $_POST["pig_bones"]. "　食<br>";
-    print "味噌ラーメン：" . $_POST["miso"]. "　食<br>";
-    print "家系ラーメン：" . $_POST["ie"]. "　食<br>";
-    print "二郎ラーメン：" . $_POST["jirou"]. "　食<br>";
+    print "醤油ラーメン：" . $_POST["soy_sauce"] . "　食<br>";
+    print "塩ラーメン　：" . $_POST["salt"] . "　食<br>";
+    print "豚骨ラーメン：" . $_POST["pig_bones"] . "　食<br>";
+    print "味噌ラーメン：" . $_POST["miso"] . "　食<br>";
+    print "家系ラーメン：" . $_POST["ie"] . "　食<br>";
+    print "二郎ラーメン：" . $_POST["jirou"] . "　食<br>";
     print <<< FORM
 <form method="post" action="exercise4_reset.php">
     <input type="submit" value="注文を確定する">
